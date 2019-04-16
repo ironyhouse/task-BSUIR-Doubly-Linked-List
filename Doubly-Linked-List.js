@@ -212,4 +212,6 @@ function LinkedList() {
     deleteItem();
   } 
 
-function LinkedList();
+/*Вызов
+LinkedList();
+*/
