@@ -1,20 +1,20 @@
 function LinkedList() {
-    class Node {
+    class Node {                                      // создание узла
       constructor (value) {
         this.value = value;
-        this.next = null;
-        this.prev = null;
+        this.next = null;                             // следующий элемент 
+        this.prev = null;                             // предыдущий элемент
       }
     }
     
     class LinkedList {
       constructor () {
-        this.head = null;
-        this.tail = null;
-        this.length = 0;
+        this.head = null;                             // голова списка
+        this.tail = null;                             // хвост списка
+        this.length = 0;                              // длинна
       }
     
-      append(value) {
+      append(value) {                                 // добавление элемента
         const newNode = new Node(value);
   
         if (this.length === 0) {
@@ -30,7 +30,7 @@ function LinkedList() {
         this.length++;
       }
   
-      insertAt(position, value) {
+      insertAt(position, value) {                       // вставка элемента
         if (position < 0 || this.length < position) {
           return false;
         }
@@ -68,7 +68,7 @@ function LinkedList() {
         this.length++;
       }
     
-      deleteAt(position) {
+      deleteAt(position) {                                  // удаление элемента 
         if (position < 0 || this.length <= position ) {
           return null;
         }
@@ -109,7 +109,7 @@ function LinkedList() {
         this.deleteAt( this.indexOf(element) );
       }
   
-      indexOf(element) {
+      indexOf(element) {                                      // индекса искомого элемента
         let current = this.head;
         let index = 0;
   
@@ -125,7 +125,7 @@ function LinkedList() {
         return -1;
       }
   
-      get(position) {
+      get(position) {                                       // значение элемента с определенным индексом
         if (position < 0 || this.length <= position ) {
           return null;
         }
@@ -141,15 +141,15 @@ function LinkedList() {
         return current.value;
       }
     
-      isEmpty() {
+      isEmpty() {                                               // проверка списка на пустоту 
         return this.length === 0;
       }
   
-      size() {
+      size() {                                                  // длинна списка 
         return this.length;
       }
     
-      print() {
+      print() {                                                 // напечатать весь список
         let current = this.head;
     
         while(current) {
