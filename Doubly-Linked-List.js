@@ -211,3 +211,5 @@ function LinkedList() {
     //getItem();
     deleteItem();
   } 
+
+function LinkedList();
