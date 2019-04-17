@@ -149,14 +149,24 @@ function LinkedList() {
      return this.length;
     }
     
-    shTail() {                                                  // длинна списка 
+    shTail() {                                                
       return this.length - 1;
     }
-  
-    reverse () {
+    
+    reverse() {                                              // инверсия списка
+      let current = this.head;
+      let prev = null;
 
-      
-    }
+      while ( current ) {
+      let next = current.next
+      current.next = prev
+      current.prev = next
+      prev = current
+      current = next
+      }
+      this.tail = this.head
+      this.head = prev
+      }
     
     print() {                                                 // напечатать весь список
       let current = this.head;
@@ -235,7 +245,7 @@ function LinkedList() {
 
   function revers () {
     console.log('---Reverse---');
-
+    list.reverse()
     list.print();
   }
 
