@@ -107,13 +107,7 @@ function LinkedList() {
 
     delete(element) {
       this.deleteAt( this.indexOf(element) );
-    }
-    
-    clr () {                                               // очищает список
-      LinkedList = {}
-      return list.print();
-    }
-    
+    } 
 
     indexOf(element) {                                      // индекса искомого элемента
       let current = this.head;
@@ -159,6 +153,10 @@ function LinkedList() {
       return this.length - 1;
     }
   
+    reverse () {
+
+      
+    }
     
     print() {                                                 // напечатать весь список
       let current = this.head;
@@ -170,7 +168,17 @@ function LinkedList() {
     }
   }
 
+
+
+
+
 ////////////////////////////////////////////////////////////////////////////////
+
+
+// ---Creation---
+  console.log('\n---Doubly Linked List---\n');
+  let list = new LinkedList();
+  let payload = {a: 4};
 
   function appendItem() {
     console.log('---Append Item---');
@@ -204,7 +212,9 @@ function LinkedList() {
     console.log('Before:');
     list.print();
 
+    
     list.delete(payload);
+    
 
     console.log('After:');
     list.print();
@@ -212,7 +222,7 @@ function LinkedList() {
 
   function showHead(){
     console.log('---Head---');
-    console.log('Head:', list.at(0));
+    console.log(list.at(0));
   }
 
 
@@ -223,24 +233,32 @@ function LinkedList() {
     
   }
 
-  function clear () {
-    console.log('---List clear---');
-    list.clr()
+  function revers () {
+    console.log('---Reverse---');
+
+    list.print();
   }
+
+
+
+  function clear () {
+    console.log('\n--- Clear Doubly Linked List---\n');
+    let list = new LinkedList();
+    list.print();
+  }
+
 
 ////////////////////////////////////////////////////////////////////////////////
 
 
-  // ---Creation---
-  console.log('\n---Doubly Linked List---\n');
-  let list = new LinkedList();
-  let payload = {a: 4};
+  
 
   appendItem();
-  //atItem();
-  //deleteItem();
-  //showHead()
-  //showTail()
+  atItem();
+  deleteItem();
+  showHead()
+  showTail()
+  revers()
   clear();
 } 
 
