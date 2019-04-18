@@ -174,9 +174,10 @@ function DoublyLinkedList() {
     }
     
     Clear () {                                                // очистить список 
-      
-      return this.LinkedList = {};
-    
+    	this.head = null;
+	    this.tail = null;
+	    this.length = 0;
+	    return this;
     }
     
     print() {                                                 // напечатать весь список
@@ -260,6 +261,7 @@ function DoublyLinkedList() {
   function clr() {
     console.log('--- Clear Doubly Linked List---');
     list.Clear();
+    list.print();
     console.log('List Clear');
   }
   
