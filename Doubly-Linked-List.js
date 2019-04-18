@@ -1,4 +1,4 @@
-function LinkedList() {
+function DoublyLinkedList() {
   class Node {                                      // создание узла
     constructor (value) {
       this.value = value;
@@ -149,11 +149,8 @@ function LinkedList() {
      return this.length;
     }
     
-    shTail() {                                                
-      return this.length - 1;
-    }
     
-    reverse() {                                              // инверсия списка
+    reverse() {                                               // инверсия списка
       let current = this.head;
       let prev = null;
 
@@ -168,6 +165,20 @@ function LinkedList() {
       this.head = prev
       }
     
+    showTail() {                                              // показать хвост списка 
+      return this.at(this.length - 1);
+    }
+    
+    showHead() {                                              // показать голову списка
+      return this.at(0);
+    }
+    
+    Clear () {                                                // очистить список 
+      
+      return this.LinkedList = {};
+    
+    }
+    
     print() {                                                 // напечатать весь список
       let current = this.head;
   
@@ -177,18 +188,13 @@ function LinkedList() {
       }
     }
   }
-
-
-
-
-
 ////////////////////////////////////////////////////////////////////////////////
-
 
 // ---Creation---
   console.log('\n---Doubly Linked List---\n');
   let list = new LinkedList();
   let payload = {a: 4};
+
 
   function appendItem() {
     console.log('---Append Item---');
@@ -230,20 +236,20 @@ function LinkedList() {
     list.print();
   }
 
-  function showHead(){
+  function shHead(){
     console.log('---Head---');
-    console.log(list.at(0));
+    console.log(list.showHead());
   }
 
 
-  function showTail(){
+  function shTail(){
     console.log('---Tail---');
-    console.log(list.at(list.shTail()));
+    console.log(list.showTail());
 
     
   }
 
-  function revers () {
+  function revers() {
     console.log('---Reverse---');
     list.reverse()
     list.print();
@@ -251,26 +257,21 @@ function LinkedList() {
 
 
 
-  function clear () {
-    console.log('\n--- Clear Doubly Linked List---\n');
-    let list = new LinkedList();
-    list.print();
+  function clr() {
+    console.log('--- Clear Doubly Linked List---');
+    list.Clear();
+    console.log('List Clear');
   }
-
-
-////////////////////////////////////////////////////////////////////////////////
-
-
   
-
   appendItem();
   atItem();
   deleteItem();
-  showHead()
-  showTail()
+  shHead()
+  shTail()
   revers()
-  clear();
+  clr();
+
+////////////////////////////////////////////////////////////////////////////////
 } 
 
-
-LinkedList();
+DoublyLinkedList();
